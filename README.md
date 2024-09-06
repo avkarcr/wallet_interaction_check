@@ -35,15 +35,30 @@ This Python program processes CSV files exported from [Etherscan](https://ethers
     - Export transaction history from [Etherscan](https://etherscan.io/) for the wallets you want to analyze.
     - Place the CSV files in the same directory as the script or specify the path to a folder containing your CSV files.
 
-2. **Run the script**:
-    - Specify the base wallet address (`wallet_base`) and a list of wallet addresses (`wallets`) in the script.
+2. **Create config.py in the project folder**:
+   - In the root folder of your project, create a new file named `config.py`.
+   - This file will store your personalized configuration (wallet addresses).
+   - Open `config.py` and fill it with your specific variables.
+   - Below is an example of what your `config.py` might look like:
+
+   ```python
+   # config.py
+   wallet_base = '0xYourBaseWalletAddress'
+   wallets = [
+       '0xWallet1',
+       '0xWallet2',
+       '0xWallet3'
+   ]
+   ```
+
+3. **Run the script**:
     - The script will iterate over all wallets in the `wallets` list and compare transactions with `wallet_base`.
     - Run the program:
       ```bash
       python wallet_checker.py
       ```
 
-3. **Output**:
+4. **Output**:
     - The program will create a folder called `filtered_results` where it saves CSV files with filtered transactions between `wallet_base` and each wallet from the `wallets` list.
     - Each output file will contain all transactions between the base wallet and the current wallet in the list for each CSV file.
 
@@ -103,8 +118,23 @@ Feel free to submit issues or pull requests to improve the program. Any suggesti
     - Экспортируйте историю транзакций с [Etherscan](https://etherscan.io/) для кошельков, которые вы хотите проанализировать.
     - Поместите CSV файлы в ту же директорию, где находится скрипт, или укажите путь к папке, содержащей ваши CSV файлы.
 
-2. **Запустите скрипт**:
-    - Укажите адрес базового кошелька (`wallet_base`) и список адресов кошельков (`wallets`) в скрипте.
+2. **Создайте файл config.py в папке проекта**:
+   - В корневой папке вашего проекта создайте новый файл с именем `config.py`.
+   - Этот файл будет хранить ваши персонализированные настройки (адреса кошельков).
+   - Откройте `config.py` и заполните его своими специфическими переменными.
+   - Пример того, как может выглядеть ваш `config.py`:
+
+   ```python
+   # config.py
+   wallet_base = '0xYourBaseWalletAddress'
+   wallets = [
+       '0xWallet1',
+       '0xWallet2',
+       '0xWallet3'
+   ]
+   ```
+
+3. **Запустите скрипт**:
     - Скрипт будет перебирать все кошельки из списка `wallets` и сравнивать их транзакции с `wallet_base`.
     - Запустите программу:
       ```bash
