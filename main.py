@@ -2,11 +2,7 @@ import pandas as pd
 import os
 import re
 
-wallet_base = '0x123...'  # wallet A
-wallets = [
-    '0x456',
-    '0x789',
-]
+from config import wallet_base, wallets
 
 
 def clear_filtered_results_folder():
